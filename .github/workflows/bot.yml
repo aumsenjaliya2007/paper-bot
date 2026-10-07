@@ -1,0 +1,47 @@
+name: Paper Trading Bot
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      send_test_email:
+        description: "Only send a test email (tick this for the first test)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-bot
+  cancel-in-progress: false
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: pip install yfinance pandas numpy
+
+      - name: Run bot
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          TEST_EMAIL: ${{ inputs.send_test_email && '1' || '0' }}
+        run: python bot.py
+
+      - name: Save bot memory
+        run: |
+          git config user.name "paper-bot"
+          git config user.email "paper-bot@users.noreply.github.com"
+          git add state.json || true
+          git add trades.csv || true
+          git diff --cached --quiet || (git commit -m "bot update" && git push)
