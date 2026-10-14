@@ -2,10 +2,46 @@
  "start_date": "2026-10-07T09:16:24.910823+00:00",
  "end_date": "2027-01-05T09:16:24.910823+00:00",
  "realized": 0.0,
- "positions": [],
- "signals_seen": [],
+ "positions": [
+  {
+   "symbol": "NVDA",
+   "tf": "15m",
+   "side": "SHORT",
+   "pattern": "M",
+   "entry_time": "2026-10-14T18:02:53.644108+00:00",
+   "entry": 220.62963549041748,
+   "stop": 223.03924533299036,
+   "init_stop": 223.03924533299036,
+   "target": 214.6999969482422,
+   "qty": 113,
+   "risk_usd": 272.2859122107351,
+   "rr": 2.63,
+   "last_price": 220.62963549041748,
+   "bars_held": 0
+  },
+  {
+   "symbol": "BTC-USD",
+   "tf": "15m",
+   "side": "SHORT",
+   "pattern": "M",
+   "entry_time": "2026-10-14T18:02:53.644108+00:00",
+   "entry": 81448.74744140626,
+   "stop": 82073.56724330357,
+   "init_stop": 82073.56724330357,
+   "target": 79180.65625,
+   "qty": 0.30694,
+   "risk_usd": 191.78218999435887,
+   "rr": 3.95,
+   "last_price": 81448.74744140626,
+   "bars_held": 0
+  }
+ ],
+ "signals_seen": [
+  "NVDA|15m|M|2026-10-14 17:00:00+00:00",
+  "BTC-USD|15m|M|2026-10-14 17:00:00+00:00"
+ ],
  "closed_count": 0,
  "usd_per_inr": 0.010510826218365557,
- "last_email_date": "2026-10-13",
+ "last_email_date": "2026-10-14",
  "final_sent": false
 }
