@@ -1,0 +1,2 @@
+exit_time,symbol,tf,side,pattern,entry_time,entry,exit,qty,pnl_usd,reason
+2026-10-14 23:00:00+00:00,BTC-USD,15m,SHORT,M,2026-10-14T18:02:53.644108+00:00,81448.7474,81633.5073,0.30694,-56.71,TIME
