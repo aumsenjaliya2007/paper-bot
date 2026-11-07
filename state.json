@@ -16,8 +16,9 @@
    "qty": 74,
    "risk_usd": 642.9078506949236,
    "rr": 3.0,
-   "last_price": 337.3399963378906,
-   "bars_held": 0
+   "last_price": 334.489990234375,
+   "bars_held": 1,
+   "last_ts": "2026-11-06T05:00:00+00:00"
   }
  ],
  "signals_seen": [
@@ -26,7 +27,7 @@
   "JPM|1d|W|2026-10-23 04:00:00+00:00"
  ],
  "closed_count": 2,
- "usd_per_inr": 0.01058661486867249,
+ "usd_per_inr": 0.010648492822958733,
  "last_email_date": "2026-11-04",
  "final_sent": false
 }
